@@ -1,14 +1,59 @@
 import styled from 'styled-components';
+import styledComponentUtils from 'utils/styled-component-utils';
 import Heading001 from 'components/common/molecules-and-atoms/Heading001';
 
-const StyledElement = styled.div``;
-const UseState: React.VFC = () => (
-  <StyledElement>
+const StyledElement = styled.div`
+  &.Counter {
+    display: inline-block;
+    border: 1px solid #999999;
+  }
+  .Heading001 + &.Counter {
+    margin-top: 32px;
+  }
+  .Counter__Body {
+    padding: 0 32px;
+  }
+  .Counter__Count {
+    text-align: center;
+    ${styledComponentUtils.fontSize(64)}
+  }
+  .Counter__BodyHeading {
+  }
+  .Counter__Count {
+  }
+  .Counter__ButtonRow {
+    display: flex;
+    padding: 16px 32px;
+    border-top: 1px solid #cccccc;
+  }
+  .Counter__ButtonWrapper {
+  }
+  .Counter__Button {
+    width: 100px;
+    padding: 16px;
+    cursor: pointer;
+  }
+`;
+
+const Counter: React.VFC = () => (
+  <>
     <Heading001 text="カウンター" modifierClassNames={['Lv3']} />
-    <div>
-      <p>カウンター</p>
-    </div>
-  </StyledElement>
+    <StyledElement className="Counter">
+      <div className="Counter__Body">
+        <p className="Counter__Count">100</p>
+      </div>
+      <ul className="Counter__ButtonRow">
+        <li className="Counter__ButtonWrapper">
+          <button type="button" className="Counter__Button">
+            Reset
+          </button>
+          <button type="button" className="Counter__Button">
+            +1
+          </button>
+        </li>
+      </ul>
+    </StyledElement>
+  </>
 );
 
-export default UseState;
+export default Counter;
