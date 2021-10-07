@@ -35,7 +35,7 @@ class CharacterListClass extends Component<Props> {
           <ul key={character.id} className="List">
             <li>{character.name}</li>
             <li>{character.grade}年生</li>
-            <li>{character.height ? character.height : '???'}cm</li>
+            <li>{character.height ?? '???'}cm</li>
           </ul>
         ))}
       </StyledElement>
