@@ -1,4 +1,4 @@
-import HogeContainer from 'containers/ExamplesHoge/HogeContainer';
+import HogeContainer from 'containers/ExamplesHoge/organisms/HogeContainer';
 import Template001 from 'components/common/templates/Template001';
 
 const Hoge: React.VFC = () => (

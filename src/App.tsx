@@ -18,7 +18,7 @@ const App: React.FC = () => (
       <Route exact path={paths.examplesHoge}>
         <ExamplesHoge />
       </Route>
-      <Route exact path={paths.RiakutoChapter08}>
+      <Route exact path={paths.riakutoChapter08}>
         <RiakutoChapter08 />
       </Route>
     </Switch>
