@@ -19,7 +19,7 @@ const Nav001: React.VFC = () => (
       const key = strKey as Key;
 
       return (
-        <li className="Item">
+        <li key={key} className="Item">
           <Link to={paths[key]}>{key}</Link>
         </li>
       );
