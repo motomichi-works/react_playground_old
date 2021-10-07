@@ -4,7 +4,7 @@ import CharacterListClass, {
   Character,
 } from 'components/riakuto-chapter08/molecules-and-atoms/CharacterListClass';
 
-class Section03Class extends Component {
+class Section03CharacterListClass extends Component {
   characters: Character[] = [
     {
       id: 1,
@@ -39,11 +39,11 @@ class Section03Class extends Component {
 
   render(): ReactElement {
     return (
-      <BasicOrganism001 sectionHeadingText="8-3. クラスコンポーネントで学ぶState">
+      <BasicOrganism001 sectionHeadingText="8-3. クラスコンポーネントで学ぶState-CharacterList">
         <CharacterListClass school="湘北高校" characters={this.characters} />
       </BasicOrganism001>
     );
   }
 }
 
-export default Section03Class;
+export default Section03CharacterListClass;
