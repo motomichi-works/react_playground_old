@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-// import styledComponentUtils from 'utils/styled-component-utils';
-
 import { Link } from 'react-router-dom';
+import paths from 'settings/paths';
 
 const StyledElement = styled.ul`
   .Item {
@@ -15,15 +14,16 @@ const StyledElement = styled.ul`
 
 const Nav001: React.VFC = () => (
   <StyledElement>
-    <li className="Item">
-      <Link to="/">top-page</Link>
-    </li>
-    <li className="Item">
-      <Link to="/examples-app-clone">examples-app-clone</Link>
-    </li>
-    <li className="Item">
-      <Link to="/examples-hoge">examples-hoge</Link>
-    </li>
+    {Object.keys(paths).map((strKey) => {
+      type Key = keyof typeof paths;
+      const key = strKey as Key;
+
+      return (
+        <li className="Item">
+          <Link to={paths[key]}>{key}</Link>
+        </li>
+      );
+    })}
   </StyledElement>
 );
 
