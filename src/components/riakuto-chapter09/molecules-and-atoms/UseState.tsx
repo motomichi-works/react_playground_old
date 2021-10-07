@@ -35,19 +35,25 @@ const StyledElement = styled.div`
   }
 `;
 
-const Counter: React.VFC = () => (
+type Props = {
+  count: number;
+  increment: () => void;
+  reset: () => void;
+};
+
+const Counter: React.VFC<Props> = ({ count, increment, reset }) => (
   <>
     <Heading001 text="カウンター" modifierClassNames={['Lv3']} />
     <StyledElement className="Counter">
       <div className="Counter__Body">
-        <p className="Counter__Count">100</p>
+        <p className="Counter__Count">{count}</p>
       </div>
       <ul className="Counter__ButtonRow">
         <li className="Counter__ButtonWrapper">
-          <button type="button" className="Counter__Button">
+          <button type="button" className="Counter__Button" onClick={reset}>
             Reset
           </button>
-          <button type="button" className="Counter__Button">
+          <button type="button" className="Counter__Button" onClick={increment}>
             +1
           </button>
         </li>
