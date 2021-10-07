@@ -10,18 +10,10 @@ import paths from 'settings/paths';
 const App: React.FC = () => (
   <Router>
     <Switch>
-      <Route exact path={paths.home}>
-        <Home />
-      </Route>
-      <Route exact path={paths.examplesAppClone}>
-        <ExamplesAppClone />
-      </Route>
-      <Route exact path={paths.examplesHoge}>
-        <ExamplesHoge />
-      </Route>
-      <Route exact path={paths.riakutoChapter08}>
-        <RiakutoChapter08 />
-      </Route>
+      <Route exact path={paths.home} component={Home} />
+      <Route exact path={paths.examplesAppClone} component={ExamplesAppClone} />
+      <Route exact path={paths.examplesHoge} component={ExamplesHoge} />
+      <Route exact path={paths.riakutoChapter08} component={RiakutoChapter08} />
       <Route exact path={paths.riakutoChapter09} component={RiakutoChapter09} />
     </Switch>
   </Router>
