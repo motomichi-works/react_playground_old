@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import Heading001 from 'components/common/molecules-and-atoms/Heading001';
 
 const StyledElement = styled.section`
-  padding: 1px 16px;
-  background-color: #ffffff;
+  &.BasicOrganism001 {
+    padding: 1px 16px;
+    background-color: #ffffff;
+  }
 
   // padding-topを補完する初期値
   > :first-child {
@@ -14,6 +16,11 @@ const StyledElement = styled.section`
   // padding-bottomを補完する初期値
   > :last-child {
     margin-bottom: 39px;
+  }
+
+  // 隣接要素セレクタによるマージン
+  &.BasicOrganism001 + .BasicOrganism001 {
+    margin-top: 64px;
   }
 
   .HeadingWrapper {
@@ -31,7 +38,7 @@ const BasicOrganism001: React.FC<Props> = ({
   children,
   sectionHeadingText,
 }) => (
-  <StyledElement>
+  <StyledElement className="BasicOrganism001">
     <div className="HeadingWrapper">
       <Heading001 text={sectionHeadingText} />
     </div>
